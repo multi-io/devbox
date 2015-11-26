@@ -71,7 +71,8 @@ Vagrant.configure(2) do |config|
 
   config.vm.provision "shell", path: "bootstrap.sh"
 
-  config.ssh.username "olaf"
+  # doesn't work -- results in "vagrant up" timing out ("Warning: Authentication failure. Retrying...") trying to ssh into the box (for provisioning?)
+  #config.ssh.username "olaf"
 
   
 end
