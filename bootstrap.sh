@@ -21,3 +21,8 @@ if [ -d "$HH/utils" ]; then
     cd "$HH/utils"
     make  # TODO make it abort when interactive input (password entry) is required?
 fi
+
+if [ -d "$HH/.ssh" ]; then
+    mkdir -p ~/.ssh
+    find "$HH/.ssh/" -maxdepth 1 -type f ! -name authorized_keys -print0 | xargs -0 -i cp -f {} ~/.ssh/
+fi
