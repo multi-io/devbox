@@ -15,7 +15,7 @@ git config --global user.name "Olaf Klischat"
 
 git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 
-HH=/home/hostolaf
+HH=/home/hosthome
 
 if [ -d "$HH/utils" ]; then
     cd "$HH/utils"
