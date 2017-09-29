@@ -1,0 +1,14 @@
+.DS_Store
+*.pyc
+*~
+\#*
+.\#*
+.idea/
+*build/
+dist/
+.git/
+.gitignore
+/Makefile
+/Dockerfile*
+/.dockerignore
+/compose-psql.sh
