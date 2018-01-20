@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e
+set -ex
 
 # ugh...
 if [ "$0" == "/setup.sh" ]; then
@@ -19,8 +19,8 @@ $SUDO apt-get install -y python-dev ipython mysql-server mysql-client libmysqlcl
 
 pip install virtualenv
 
-curl -L https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl -o /usr/local/bin/kubectl
-chmod +x /usr/local/bin/kubectl
+$SUDO curl -L https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl -o /usr/local/bin/kubectl
+$SUDO chmod +x /usr/local/bin/kubectl
 
 # TODO git clone home
 
