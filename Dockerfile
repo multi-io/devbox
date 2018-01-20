@@ -1,4 +1,4 @@
-FROM ubuntu:17.04
+FROM ubuntu:17.10
 MAINTAINER Olaf Klischat <olaf.klischat@gmail.com>
 
 COPY bootstrap.sh /setup.sh
