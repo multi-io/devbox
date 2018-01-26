@@ -15,7 +15,7 @@ debconf-set-selections <<< 'mysql-server mysql-server/root_password password roo
 debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password rootpw'
 
 $SUDO apt-get update
-$SUDO apt-get install -y python-dev ipython mysql-server mysql-client libmysqlclient-dev git vim emacs python-pip ruby-dev build-essential gdb devscripts automake dh-make dpkg-dev debhelper dh-autoreconf sgmltools-lite dpkg w3m po4a libdebconfclient0-dev    g++ bc lsb-release make gcc net-tools tmux iputils-ping iputils-arping iputils-tracepath tcpdump whois netcat dialog gnupg virtualenv python3-venv python3-dev wget curl
+$SUDO apt-get install -y python-dev ipython mysql-server mysql-client libmysqlclient-dev git vim emacs python-pip ruby-dev build-essential gdb devscripts automake dh-make dpkg-dev debhelper dh-autoreconf sgmltools-lite dpkg w3m po4a libdebconfclient0-dev    g++ bc lsb-release make gcc net-tools tmux iputils-ping iputils-arping iputils-tracepath tcpdump whois netcat dialog gnupg virtualenv python3-venv python3-dev wget curl dnsutils
 
 pip install virtualenv
 
