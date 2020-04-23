@@ -8,16 +8,20 @@ if [ "$0" == "/setup.sh" ]; then
     SUDO=""
 else
     # vagrant
-    SUDO="sudo"
+    SUDO="sudo --preserve-env"
 fi
 
 debconf-set-selections <<< 'mysql-server mysql-server/root_password password rootpw'
 debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password rootpw'
 
 $SUDO apt-get update
+
+printf 'tzdata tzdata/Areas select Europe\ntzdata tzdata/Zones/Europe select Berlin\n' | $SUDO debconf-set-selections
+export DEBIAN_FRONTEND=noninteractive; export DEBCONF_NONINTERACTIVE_SEEN=true
+
 $SUDO apt-get install -y mysql-server mysql-client libmysqlclient-dev git vim emacs python3-pip ruby-dev build-essential gdb devscripts automake dh-make dpkg-dev debhelper dh-autoreconf dpkg w3m po4a libdebconfclient0-dev    g++ bc lsb-release make gcc net-tools tmux iputils-ping iputils-arping iputils-tracepath tcpdump whois netcat dialog gnupg virtualenv python3-venv python3-dev wget curl dnsutils
 
-pip install virtualenv
+pip3 install ipython
 
 $SUDO curl -L https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl -o /usr/local/bin/kubectl
 $SUDO chmod +x /usr/local/bin/kubectl
